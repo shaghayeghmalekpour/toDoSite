@@ -31,38 +31,60 @@ main {
     padding: 1rem 2rem;
 }
 .card-container{
+  overflow: hidden;
+  position: relative;
   display: flex;
   flex-flow: column wrap;
-  /* flex: 1 0 400px; */
   flex-basis: 400px;
   justify-content: space-between;
+  text-align: justify;
   height: 250px;
   text-align: center;
-  background-image: url("https://picsum.photos/400/300");
-  padding: 2rem 2rem;
-  color: white;
+  padding: 1rem 2rem;
   font-weight: bold;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card-container >div:not(.li-container){
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.5);
+  color: rgb(8, 6, 6);
+  width: 100%;
+}
+.li-container{
+  color: rgb(255, 255, 255);
+  z-index: 1;
 }
 .card-container p{
   padding: 1rem;
 }
-/* here we go again! */
 
-/* .card-background{
-
+.card-background{
+transition: all 1.2s ease-in;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: center center no-repeat;
+    background-size: cover;
+    border-radius: 4px;
+    filter: blur(2px);
+    
 }
- */
+.card-background:hover{
+  transform: scale(1.2);
+}
 
 
 .card-container label , .card-container input{
-margin: .25rem;
+margin: .35rem;
+display: inline-block;
 }
 aside{
   width: 300px;
   height: 100vh;
   background: linear-gradient(180deg, rgb(157, 157, 247), rgb(236, 227, 227));
   text-align: center;
-  height: 100%;
   position: fixed;
   top: 0;
 }
